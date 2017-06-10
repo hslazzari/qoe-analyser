@@ -1,0 +1,76 @@
+
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <div class="container">
+      <h2>Resultados do Simulador</h2>
+      <p>Resultados resumidos do simulador por ordem temporal crescente</p>            
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>IP</th>
+            <th>Opinião</th>
+            <th>Ativar stall simulado</th>
+            <th>Ativar tempo de Startup</th>
+            <th>Ativar Troca de Resolução</th>
+            <th>Horário da Medição</th>
+            <th>URL</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          <% results.forEach(function(result) { %>
+            <tr>
+                <td> <%= result.ip %> </td>
+                <td> <%= result.opinion %> </td>
+                <td> <%= result.ativar_stall %> </td>
+                <td> <%= result.ativar_startup_stall %> </td>
+                <td> <%= result.ativar_troca_de_resolucao %> </td>
+                <td> <%= result.start_timestamp %> </td>
+                <td> <%= result.url_resolucao_6 %> </td>
+            </tr>
+          <% }); %>
+        </tbody>
+
+  </table>
+</div>
+
+
+
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+
+</body>
+</html>

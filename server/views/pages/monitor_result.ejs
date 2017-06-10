@@ -1,0 +1,76 @@
+
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <div class="container">
+      <h2>Resultados do Plugin</h2>
+      <p>Resultados resumidos do plugin por ordem temporal crescente</p>            
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>IP</th>
+            <th>Opinião</th>
+            <th>ID do vídeo</th>
+            <th>Duração do vídeo</th>
+            <th>Horário da medição</th>
+            <th>Tempo total de stall</th>
+            <th>Tempo total de startup</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          <% results.forEach(function(result) { %>
+            <tr>
+                <td> <%= result.ip %> </td>
+                <td> <%= result.opinion %> </td>
+                <td> <%= result.video_information_id %> </td>
+                <td> <%= result.video_duration %> </td>
+                <td> <%= result.start_timestamp %> </td>
+                <td> <%= result.total_stall_length %> </td>
+                <td> <%= result.video_start_time %> </td>
+            </tr>
+          <% }); %>
+        </tbody>
+
+  </table>
+</div>
+
+
+
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <div class="container">
+        <div class="starter-template">
+            <h1>
+                Testes da Qualidade de Experiência do Usuário
+            </h1>
+            <p>
+                <br>
+                Esta pesquisa é parte de um projeto de mestrado da UFRGS que visa compreender a percepcção de qualidade por parte do usuário. <br>
+                Você deve inserir algumas informações de perfil (como e-mail, idade e gênero) que serão utilizadas exclusivamente para a pesquisa.
+                <br> Após, você será redirecionado para um conjunto inicial de 5 vídeos (duração de 1 minuto cada) que devem ser assistidos em duas  <br>etapas totalizando 10 visualizações. 
+            </p>
+            <p>
+                Favor inserir seu email para início do teste, caso não seja informado um email o experimento não poderá ser<br>
+                continuado mais tarde.
+            </p>
+        </div>
+
+        <form action="/questionario" method="get" id="teste_form">
+          <div class="form-group">
+            <label for="email">Endereço de email:</label>
+            <input type="email" class="form-control" id="email2">
+            <br/>
+            <button type="submit" class="btn btn-primary" id="vt_submit">Iniciar</button>
+          </div>
+
+        <input type="hidden" id="email" name="email">
+        </form>
+
+            
+    </div>
+    <script type="text/javascript">
+        function makeid()
+        {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for( var i=0; i < 60; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
+        $("#vt_submit").click(function(evt)
+        {
+            evt.preventDefault();
+            if($("#email2").val() == "")
+            {
+                $("#email").val(makeid());
+            }
+            else 
+            {
+                $("#email").val($("#email2").val());   
+            }
+            $("#teste_form").submit();
+            return false;
+        })
+
+    </script>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

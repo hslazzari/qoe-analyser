@@ -1,0 +1,78 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <script type="text/javascript">
+        var redirect  = "<%= redirect.redirect %>";
+
+
+        if (redirect == "true") { window.location.href = "full_testes?email_id=" + "<%= redirect.email_id %>";};
+    </script>
+    <div class="container">
+        <h1>
+            Questionário Inicial
+        </h1>
+        <form action="/full_testes" method="get">
+          <div class="form-group">
+            <fieldset>
+            <label>Quantas horas você assiste vídeos na Internet por dia:</label>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="radio" name="tempo" value="1" checked> Menos de 1 hora
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="tempo" value="2"> Entre 1 e 3 horas
+                </div>
+                <div class="col-md-4">
+                    <input type="radio" name="tempo" value="3"> Mais de 3 horas
+                </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Quantas dias por semana você assiste vídeos na Internet:</label>
+            <input type="number" class="form-control" min="1" max="7" id="semanal" name="semana" placeholder="1" value="1">
+          </div>
+
+
+          <div class="form-group">
+            <label>Idade:</label>
+            <input type="number" class="form-control" min="10" max="100" id="idade" name="idade" placeholder="24" value="24">
+          </div>
+
+          <div class="form-group">
+             <label>Sexo:</label>
+             <div class="row">
+              <div class="col-md-6">
+                <input type="radio" name="sexo" value="1" checked> Masculino
+              </div>
+              <div class="col-md-6">
+                <input type="radio" name="sexo" value="2"> Feminino
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="email_id" value="<%= redirect.email_id %>">
+          <button type="submit" class="btn btn-primary">Enviar Questionário</button>
+        </div>
+
+
+
+
+        </form>
+    </div>
+
+    
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

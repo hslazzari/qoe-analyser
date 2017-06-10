@@ -1,0 +1,68 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <script type="text/javascript">
+        var config_inicial = <%= config %>;
+        var email_id       = <%= email_id %>;
+        var watched        = <%= watched %>;
+    </script>
+    <script type="text/javascript" src="../resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.raty.js"></script>
+    <script type="text/javascript" src="../resources/js/simulador_server.js"></script>
+    <script type="text/javascript" src="../resources/js/simulador_config.js"></script>
+    <script type="text/javascript" src="../resources/js/monitor.js"></script>
+    <script type="text/javascript" src="../resources/js/teste.js"></script>
+
+    
+</head>
+<body class="container">
+    <style>
+        video {
+            position:relative;
+            width: 100%    !important;
+            height: auto   !important;
+            z-index:0;
+        }
+
+        .video_loading_custom {
+            position:absolute;
+            width: auto;
+            height: auto;
+            left:50%;
+            top: 50%;
+            z-index:300000;
+        }
+
+        .video_playing_custom {
+            display: none;
+        }
+    </style>
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <div class="outer-container" >
+        <div class="inner-container" style="position:relative;">
+            <video height="720" id="myVideo" controls preload="auto">
+                <source src="<%= link %>" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div id="status_loading" class="video_playing_custom">
+               <img src="../resources/img/load.gif" height="24px">
+            </div>
+        </div>
+    </div>
+    <button type="button" id = "avaliar" class="btn btn-success">Avaliar o vídeo</button>
+
+
+    <div>
+        Para assistir o vídeo original sem modificações e completo acesse este <a href="<%= link_original %>">link</a>.
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!-- views/pages/index.ejs -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <div class="container">
+        <div class="starter-template">
+            <h1>
+                Conjunto de Testes da Qualidade de Experiência do Usuário
+            </h1>
+
+            <p>
+                Conjunto de testes separados em 2 etapas de 5 vídeos
+            </p>
+        </div>
+
+        <table class="table">
+        <tr>
+            <td>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th id="etapa">
+                                Etapa 1
+                            </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id = "video_1_c" class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" id="video_1" class="btn btn-link">Vídeo 1</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div  class="checkbox">
+                                            <label id = "video_1_cb" style="visibility:hidden"> Assistido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id = "video_2_c" class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" id="video_2" class="btn btn-link">Vídeo 2</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="checkbox">
+                                            <label id = "video_2_cb" style="visibility:hidden"> Assistido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id = "video_3_c" class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" id="video_3" class="btn btn-link">Vídeo 3</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div  class="checkbox">
+                                            <label id = "video_3_cb" style="visibility:hidden"> Assistido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id = "video_4_c" class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" id="video_4" class="btn btn-link">Vídeo 4</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div  class="checkbox">
+                                            <label id = "video_4_cb" style="visibility:hidden"> Assistido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id = "video_5_c" class="row">
+                                    <div class="col-md-8">
+                                        <button type="button" id="video_5" class="btn btn-link">Vídeo 5</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div  class="checkbox">
+                                            <label id="video_5_cb" style="visibility:hidden">
+                                              Assistido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+
+    <script type="text/javascript">
+        var watched_1 = <%= watched_1 %>;
+        var watched_2 = <%= watched_2 %>;
+        var watched_3 = <%= watched_3 %>;
+        var watched_4 = <%= watched_4 %>;
+        var watched_5 = <%= watched_5 %>;
+        var watched_6 = <%= watched_6 %>;
+        var watched_7 = <%= watched_7 %>;
+        var watched_8 = <%= watched_8 %>;
+        var watched_9 = <%= watched_9 %>;
+        var watched_10 = <%= watched_10 %>;
+        var video_config_1 = <%= video_config_1 %>;
+        var video_config_2 = <%= video_config_2 %>;
+        var video_config_3 = <%= video_config_3 %>;
+        var video_config_4 = <%= video_config_4 %>;
+        var video_config_5 = <%= video_config_5 %>;
+        var video_config_6 = <%= video_config_6 %>;
+        var video_config_7 = <%= video_config_7 %>;
+        var video_config_8 = <%= video_config_8 %>;
+        var video_config_9 = <%= video_config_9 %>;
+        var video_config_10 = <%= video_config_10 %>;
+        var video_pos_1 = <%= video_pos_1 %>;
+        var video_pos_2 = <%= video_pos_2 %>;
+        var video_pos_3 = <%= video_pos_3 %>;
+        var video_pos_4 = <%= video_pos_4 %>;
+        var video_pos_5 = <%= video_pos_5 %>;
+        var video_pos_6 = <%= video_pos_6 %>;
+        var video_pos_7 = <%= video_pos_7 %>;
+        var video_pos_8 = <%= video_pos_8 %>;
+        var video_pos_9 = <%= video_pos_9 %>;
+        var video_pos_10 = <%= video_pos_10 %>;
+        var etapa        = <%= etapa %>;
+        var email_id     = <%= email_id %>;
+
+        if(etapa == 1)
+        {
+            $("#etapa").html("Etapa 1");
+
+            $("#video_1").attr("valor", video_pos_1);
+            $("#video_1").attr("config", video_config_1);
+            $("#video_1").attr("watched", "1")
+            if(watched_1 == 1)
+            {
+                $("#video_1_c").addClass("bg-success");
+                $("#video_1_cb").css("visibility", "visible");
+            }
+
+            $("#video_2").attr("valor", video_pos_2);
+            $("#video_2").attr("config", video_config_2);
+            $("#video_2").attr("watched", "2")
+            if(watched_2 == 1)
+            {
+                $("#video_2_c").addClass("bg-success");
+                $("#video_2_cb").css("visibility", "visible");
+            }
+
+            $("#video_3").attr("valor", video_pos_3);
+            $("#video_3").attr("config", video_config_3);
+            $("#video_3").attr("watched", "3")
+            if(watched_3 == 1)
+            {
+                $("#video_3_c").addClass("bg-success");
+                $("#video_3_cb").css("visibility", "visible");
+            }
+
+            $("#video_4").attr("valor", video_pos_4);
+            $("#video_4").attr("config", video_config_4);
+            $("#video_4").attr("watched", "4")
+            if(watched_4 == 1)
+            {
+                $("#video_4_c").addClass("bg-success");
+                $("#video_4_cb").css("visibility", "visible");
+            }
+
+            $("#video_5").attr("valor", video_pos_5);
+            $("#video_5").attr("config", video_config_5);
+            $("#video_5").attr("watched", "5")
+            if(watched_5 == 1)
+            {
+                $("#video_5_c").addClass("bg-success");
+                $("#video_5_cb").css("visibility", "visible");
+            }
+            
+        }
+        else 
+        {
+            $("#etapa").html("Etapa 2");
+
+            $("#video_1").attr("valor", video_pos_6);
+            $("#video_1").attr("config", video_config_6);
+            $("#video_1").attr("watched", "6")
+            if(watched_6 == 1)
+            {
+                $("#video_1_c").addClass("bg-success");
+                $("#video_1_cb").css("visibility", "visible");
+            }
+
+            $("#video_2").attr("valor", video_pos_7);
+            $("#video_2").attr("config", video_config_7);
+            $("#video_2").attr("watched", "7")
+            if(watched_7 == 1)
+            {
+                $("#video_2_c").addClass("bg-success");
+                $("#video_2_cb").css("visibility", "visible");
+            }
+
+            $("#video_3").attr("valor", video_pos_8);
+            $("#video_3").attr("config", video_config_8);
+            $("#video_3").attr("watched", "8")
+            if(watched_8 == 1)
+            {
+                $("#video_3_c").addClass("bg-success");
+                $("#video_3_cb").css("visibility", "visible");
+            }
+
+            $("#video_4").attr("valor", video_pos_9);
+            $("#video_4").attr("config", video_config_9);
+            $("#video_4").attr("watched", "9")
+            if(watched_9 == 1)
+            {
+                $("#video_4_c").addClass("bg-success");
+                $("#video_4_cb").css("visibility", "visible");
+            }
+
+            $("#video_5").attr("valor", video_pos_10);
+            $("#video_5").attr("config", video_config_10);
+            $("#video_5").attr("watched", "10")
+            if(watched_10 == 1)
+            {
+                $("#video_5_c").addClass("bg-success");
+                $("#video_5_cb").css("visibility", "visible");
+            }
+        }
+        
+        $(document).on("click", "button", 
+            function(event) 
+            {
+               url_nova   = "/tests?watched=" + $(event.target).attr("watched") + 
+                            "&id=" + email_id + 
+                            "&config=" + $(event.target).attr("config") +
+                            "&valor=" + $(event.target).attr("valor")      
+              
+              window.location.href = url_nova
+            }
+        );
+    </script>
+    
+</body>
+</html>

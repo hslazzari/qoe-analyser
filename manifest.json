@@ -1,0 +1,46 @@
+{
+  "name": "A monitoring plugin of QoE",
+  "description": "HTML5 video QoE monitoring plugin",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*", "activeTab", "storage"
+  ],
+  "manifest_version": 2,
+  "content_scripts": [
+      {
+         "matches": ["https://*/*", "http://*/*"],
+         "css" : [
+                  "css/bootstrap.css",
+                  "css/bootstrap-dialog.css",
+                  "css/bootstrap-dialog.min.css"
+                ],
+         "js": [
+                  "script/jquery-2.1.1.min.js",
+                  "js/bootstrap.js",
+                  "js/bootstrap.min.js",
+                  "js/bootstrap-dialog.js",
+                  "script/jquery.raty.js",
+                  "script/monitor.js",
+                  "script/simulador.js",
+                  "script/html5monitor.js"
+              ]
+      }
+  ],
+
+  "background": {
+        "scripts": [
+                      "script/jquery-2.1.1.min.js",
+                      "script/background.js"
+                   ],
+        "persistent": true
+  },
+
+  "web_accessible_resources" : [
+    "remote.html",
+    "calculator.html",
+    "star-on.png",
+    "star-off.png"
+  ],
+
+  "options_page": "options.html"
+}
